@@ -1,0 +1,22 @@
+[user]
+	name = Keijo Korte
+    email = git@kvak.net
+	# signingKey = xxxxx
+
+[init]
+	defaultBranch = main
+
+[alias]
+    st = "status -s -b"
+    c = "commit"
+
+    br = "branch -a -v"
+
+    co = "checkout"
+    cb = "checkout -b"
+
+    # Short hash, relative date and message.
+    logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
+
+    lol = "log --graph --decorate --oneline"
+

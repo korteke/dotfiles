@@ -32,11 +32,10 @@ function linkDotfile {
   ln -s ${dotfilesDir}/${1} ${dest}
 }
 
-# Install Vundle
-VUNDLEDIR="${HOME}/.vim/bundle/Vundle.vim"
-if [ ! -d $VUNDLEDIR ]; then
-  mkdir -p $VUNDLEDIR
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install Vim-Plug
+PLUGDIR="${HOME}/.vim/autoload/plug.vim"
+if [ ! -d $PLUGDIR ]; then
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Install packages
@@ -50,5 +49,5 @@ fi
 
 linkDotfile vimrc
 linkDotfile tmux.conf
-#linkDotfile gitconfig
+linkDotfile gitconfig
 linkDotfile zshrc
