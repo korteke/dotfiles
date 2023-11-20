@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,8 +105,19 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-# FZF
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+SPACESHIP_USER_SHOW=false
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
+
+# OS settings
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # Blop
+fi
+
+if [[ "$OSTYPE" =~ ^linux ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

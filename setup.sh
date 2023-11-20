@@ -40,7 +40,7 @@ fi
 
 # Install packages
 if [[ "$OSTYPE" =~ ^darwin ]]; then
-    brew install fzf ripgrep
+    brew install fzf ripgrep tmux
 fi
 
 if [[ "$OSTYPE" =~ ^linux ]]; then
