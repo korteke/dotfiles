@@ -47,6 +47,12 @@ if [[ "$OSTYPE" =~ ^linux ]]; then
     sudo apt install fzf ripgrep
 fi
 
+# tmux plugin manager
+TPMDIR="${HOME}/.tmux/plugins/tpm"
+if [ ! -d $TPMDIR ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 linkDotfile vimrc
 linkDotfile tmux.conf
 linkDotfile gitconfig
