@@ -47,6 +47,11 @@ if [[ "$OSTYPE" =~ ^linux ]]; then
     sudo apt install fzf ripgrep
 fi
 
+if [ ! -d $ZSH_CUSTOM ]; then
+  git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+  ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+fi
+
 # tmux plugin manager
 TPMDIR="${HOME}/.tmux/plugins/tpm"
 if [ ! -d $TPMDIR ]; then

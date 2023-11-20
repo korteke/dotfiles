@@ -8,21 +8,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'https://github.com/tpope/vim-fugitive.git'
-
 call plug#end()
 
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 " Display options
 set encoding=utf-8
@@ -38,13 +26,33 @@ set background=dark
 " Status bar
 set laststatus=2
 
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.space = "\ua0"
+
+let g:airline_left_sep = '»'
+let g:airline_left_alt_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_alt_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 " Airline status line config
-" let g:airline_powerline_fonts = 1
-let g:airline_symbols_ascii = 1
+let g:airline_powerline_fonts = 1
+" let g:airline_symbols_ascii = 1
 let g:airline_left_sep='>'
 let g:airline_right_sep='<'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#branch#enabled=1
 let g:airline_theme='bubblegum'
 " let g:airline_theme='dark'
 " let g:airline_theme='papercolor'

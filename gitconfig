@@ -1,10 +1,10 @@
 [user]
-	name = Keijo Korte
+    name = Keijo Korte
     email = git@kvak.net
-	# signingKey = xxxxx
+    # signingKey = xxxxx
 
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [alias]
     st = "status -s -b"
